@@ -34,7 +34,7 @@ function isMobile(): boolean {
 function handleResize(): void {
   activeClass.value = isMobile()
 }
-function onLeave(el: HTMLElement | null) {
+function onLeave(el: any) {
   let tl = gsap.timeline({ repeat: 2, repeatDelay: 0.3 })
 
   gsap.set('.navItemsDiv', { y: '0', opacity: 1 })
@@ -59,7 +59,7 @@ function onLeave(el: HTMLElement | null) {
     duration: 0.3,
   })
 }
-function onEnter(el: HTMLElement | null) {
+function onEnter(el: any) {
   let tl = gsap.timeline({})
   gsap.set(el, { width: 0, height: 0 })
 

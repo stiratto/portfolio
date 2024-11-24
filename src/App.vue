@@ -19,10 +19,6 @@ onMounted(() => {
   }
   requestAnimationFrame(raf)
 })
-
-onUnmounted(() => {
-  Lenis.destroy()
-})
 </script>
 
 <template>

@@ -2,6 +2,7 @@
 import { defineProps } from 'vue'
 import { MoveUpRight } from 'lucide-vue-next'
 import { Github } from 'lucide-vue-next'
+import type { PropType } from 'vue'
 
 interface Tag {
   label: string
@@ -12,7 +13,7 @@ const props = defineProps({
   title: { type: String, required: true },
   description: { type: String, required: true },
   thumbnail: { type: String, required: true },
-  tags: { type: Array, required: true } as Tag[],
+  tags: { type: Array as PropType<Tag[]>, required: true },
   page: { type: String, required: true },
   github: { type: String, required: true },
 })
