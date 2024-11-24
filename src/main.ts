@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
 import 'lenis/dist/lenis.css'
-import router from '@/router/router.js'
+import router from '@/router/router'
 
 const app = createApp(App)
 app.use(router)
