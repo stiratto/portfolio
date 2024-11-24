@@ -11,9 +11,9 @@ function goto() {
 }
 
 function displayBtn() {
-  let btn: HTMLElement = document.querySelector('.upBtn')
+  let btn = document.querySelector('.upBtn')
 
-  if (typeof btn !== 'null') {
+  if (btn !== null) {
     if (window.scrollY === 0) {
       btn.classList.add('hidden')
     } else {
