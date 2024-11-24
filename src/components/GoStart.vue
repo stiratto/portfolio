@@ -13,10 +13,12 @@ function goto() {
 function displayBtn() {
   let btn: HTMLElement = document.querySelector('.upBtn')
 
-  if (window.scrollY === 0) {
-    btn.classList.add('hidden')
-  } else {
-    btn.classList.remove('hidden')
+  if (typeof btn !== 'null') {
+    if (window.scrollY === 0) {
+      btn.classList.add('hidden')
+    } else {
+      btn.classList.remove('hidden')
+    }
   }
 }
 </script>
