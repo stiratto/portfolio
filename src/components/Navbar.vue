@@ -3,13 +3,13 @@ import { gsap } from 'gsap'
 import { watch, ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import items from '@/consts/navbar-items.ts'
-import socials from '@/consts/social-items.ts'
+import items from '@/consts/navbar-items'
+import socials from '@/consts/social-items'
 
-let activeClass = ref(isMobile()) as Ref<boolean>
-let userScrolledUp = ref(true) as Ref<boolean>
-let oldY = ref(0) as Ref<number>
-let navbarHovered = ref(false) as Ref<boolean>
+let activeClass = ref(isMobile())
+let userScrolledUp = ref(true)
+let oldY = ref(0)
+let navbarHovered = ref(false)
 
 watch(activeClass, (newValue) => {
   return newValue
@@ -34,7 +34,7 @@ function isMobile(): boolean {
 function handleResize(): void {
   activeClass.value = isMobile()
 }
-function onLeave(el) {
+function onLeave(el: HTMLElement | null) {
   let tl = gsap.timeline({ repeat: 2, repeatDelay: 0.3 })
 
   gsap.set('.navItemsDiv', { y: '0', opacity: 1 })
@@ -59,7 +59,7 @@ function onLeave(el) {
     duration: 0.3,
   })
 }
-function onEnter(el) {
+function onEnter(el: HTMLElement | null) {
   let tl = gsap.timeline({})
   gsap.set(el, { width: 0, height: 0 })
 

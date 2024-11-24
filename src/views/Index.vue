@@ -15,11 +15,11 @@ onMounted(() => {
   activeClass.value = true
 })
 
-function scrollTo(view: Ref<HTMLElement | null>) {
+function scrollTo(view: any) {
   view.scrollIntoView({ behavior: 'smooth' })
 }
 
-function onEnter(el: HTMLElement | null) {
+function onEnter(el: any) {
   const h1 = document.querySelector('.name-h1')
   let tl = gsap.timeline()
 

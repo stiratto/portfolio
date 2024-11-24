@@ -9,12 +9,11 @@ onMounted(() => {
   const lenis = new Lenis({
     autoRaf: true,
     smoothWheel: true, // Activar desplazamiento suave con el mouse
-    smoothTouch: true, // Activar desplazamiento suave en dispositivos táctiles
     duration: 1.2, // Duración del desplazamiento
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Efecto de suavizado
   })
 
-  function raf(time) {
+  function raf(time: number) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
@@ -22,7 +21,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  lenis.destroy()
+  Lenis.destroy()
 })
 </script>
 

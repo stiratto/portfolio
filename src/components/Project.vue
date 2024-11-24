@@ -2,9 +2,6 @@
 import { defineProps } from 'vue'
 import { MoveUpRight } from 'lucide-vue-next'
 import { Github } from 'lucide-vue-next'
-import { useI18n } from 'vue-i18n'
-import { Translate } from '@google-cloud/translate'
-const projectId = 'YOUR_PROJECT_ID'
 
 interface Tag {
   label: string
@@ -15,7 +12,7 @@ const props = defineProps({
   title: { type: String, required: true },
   description: { type: String, required: true },
   thumbnail: { type: String, required: true },
-  tags: { type: Array, required: true },
+  tags: { type: Array, required: true } as Tag[],
   page: { type: String, required: true },
   github: { type: String, required: true },
 })
